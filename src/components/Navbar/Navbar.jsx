@@ -7,6 +7,7 @@ import logo from '../../asset/ui/logo.png'
 import menu from '../../asset/ui/menu-burger.png'
 import arrow from '../../asset/ui/arrow-down-sign-to-navigate.png'
 import close from '../../asset/ui/close.png'
+import mobile_arrow from '../../asset/ui/right-arrow.png'
 
 const Navbar = () => {
   const [scrollUp, setScrollUp] = useState(false)
@@ -78,7 +79,7 @@ const Navbar = () => {
         <div className='navbar-mobile-menu-drawer-items'>
           <ul>
           <li><Link style={{ textDecoration: 'none'}} to='/'>HOME</Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>SHOP BY</Link></li>
+          <li><Link style={{ textDecoration: 'none'}} to='/'>SHOP BY <img src={mobile_arrow} alt="arrow icon" /></Link></li>
           <li><Link style={{ textDecoration: 'none'}} to='/'>ABOUT</Link></li>
           <li><Link style={{ textDecoration: 'none'}} to='/'>BLOG</Link></li>
           <li><Link style={{ textDecoration: 'none'}} to='/'>CONTACT</Link></li>
