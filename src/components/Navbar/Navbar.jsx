@@ -37,9 +37,16 @@ const Navbar = () => {
   }, []);
 
   const handleMenuClick = () => {
-    setHidden(!hidden)
-    console.log(hidden);
+    setHidden((prev) => !prev)
   }
+
+  const handleBodyClick = (e) => {
+    if (!e.target.closest('.navbar-mobile-menu-drawer') && (!e.target.closest('.navbar-mobile-menu')) && !hidden) {
+      setHidden(true)
+    }
+  }
+
+  document.body.addEventListener('click', handleBodyClick)
 
   return (
     <div className={`navbar ${scrollUp ? 'navbar-scroll-up' : ''}`}>

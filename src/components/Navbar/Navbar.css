@@ -118,6 +118,7 @@ a {
 
   .navbar-items {
     height: 6rem;
+    padding: 0;
   }
 
   .navbar-mobile-menu {
@@ -126,6 +127,8 @@ a {
 
   .navbar-desktop-menu {
     display: block;
+    background-color: var(--light-primary);
+    padding: 2.5rem 0 1rem 0;
   }
 
   .navbar-desktop-menu ul {
@@ -142,12 +145,18 @@ a {
     font-weight: 600;
   }
 
+  .navbar-desktop-menu li:hover {
+    color: var(--dark-primary);
+  }
+
   .navbar-desktop-menu img {
     width: 1rem;
   }
 
   .navbar-search-cart {
     width: 100%;
+    margin: 0;
+    padding: 0 6rem;
   }
 
   .navbar-desktop-menu {
@@ -160,7 +169,6 @@ a {
 
 @media (min-width: 1440px) {
   .navbar-logo img {
-    margin-top: rem;
     width: 12rem;
   }
 
