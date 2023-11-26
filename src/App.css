@@ -9,6 +9,8 @@
 
 :root {
   --base-font-size: 1rem; 
+  --font-size-xxxs: 0.4rem;
+  --font-size-xxs: 0.5rem;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
@@ -34,7 +36,25 @@ body {
   letter-spacing: 1.2px;
 }
 
+button {
+  color: var(--background);
+  background-color: var(--text);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  letter-spacing: 3px;
+  padding: 1.25rem 2.5rem;
+
+}
+
 @media (max-width: 767px) {
+  button {
+    font-size: var(--font-size-xxxs);
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+  }
 }
 
 @media (min-width: 768px) {

@@ -1,12 +1,66 @@
 .hero {
-  background-color: var(--light-primary);
+  background-color: var(--background);
 }
 
 .hero-carousel-container {
-  background-size: cover;
-  width: 50rem;
-  height: 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
+
+.hero-carousel-container img {
+  width: 100%;
+}
+
+.hero-carousel-container button {
+  width: 16%; 
+  height: auto; 
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  top: 60%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+}
+
 .hero-slider {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--dark-shadow-primary); 
+  border-bottom: 1px solid var(--dark-shadow-primary); 
+
+}
+
+.hero-slider .left {
+  rotate: 90deg;
+}
+
+.hero-slider .right {
+  rotate: 270deg;
+}
+
+.hero-slider img {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.hero-slider-indicator {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1440px) {
 }

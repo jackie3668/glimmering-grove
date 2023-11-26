@@ -23,6 +23,7 @@
   position: relative;
   height: 7rem;
   padding-left: 1rem;
+
   background-color: var(--light-primary);
 }
 
@@ -72,10 +73,12 @@ a {
 }
 
 .navbar-mobile-menu-drawer {
+  z-index: 100;
   width: 25rem;
   height: 85vh;
   background-color: var(--light-primary);
   padding-top: 2rem;
+  margin-top: -0.1rem;
   position: fixed;
 }
 
