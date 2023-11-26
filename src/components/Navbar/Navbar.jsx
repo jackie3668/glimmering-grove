@@ -14,15 +14,18 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(true)
 
   useEffect(() => {
+    const navbar = document.querySelector('.navbar');
+    const initialOffsetTop = navbar.offsetTop;
     let lastScrollTop = 0;
 
     const handleScroll = () => {
       setHidden(true)
-
       const currentScroll = window.scrollY;
 
-      if (currentScroll < lastScrollTop) {
+      if (currentScroll < lastScrollTop && currentScroll > initialOffsetTop) {
         setScrollUp(true);
+      } else if (currentScroll === 0) {
+        setScrollUp(false)
       } else {
         setScrollUp(false);
       }
