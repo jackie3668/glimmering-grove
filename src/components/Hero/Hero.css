@@ -1,5 +1,12 @@
 .hero {
-  width: 500px;
-  height: 280px;
-  background-color: yellowgreen;
+  background-color: var(--light-primary);
+}
+
+.hero-carousel-container {
+  background-size: cover;
+  width: 50rem;
+  height: 100rem;
+}
+.hero-slider {
+  display: flex;
 }
