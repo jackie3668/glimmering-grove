@@ -8,17 +8,19 @@ import arrow from '../../asset/ui/arrow-down-sign-to-navigate.png'
 import circle from '../../asset/ui/dry-clean.png'
 import circle_filled from '../../asset/ui/new-moon.png'
 import pause from '../../asset/ui/pause.png'
+import play from '../../asset/ui/play-button-arrowhead.png'
 
 
 const Hero = () => {
   const imageUrls = [heroBg1, heroBg2, heroBg3, heroBg4];
   const [carouselIndex, setCarouselIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
 
   const image = document.getElementById('hero-carousel-image');
 
   const handleIndicatorClick = (e) => {
-    image.src = imageUrls[e.target.id]
-    setCarouselIndex(e.target.id)
+    setCarouselIndex(Number(e.target.id))
+    image.src = imageUrls[carouselIndex]
   }
 
   const handlePrevClick = () => {
@@ -41,14 +43,21 @@ const Hero = () => {
     }
   }
 
+  const handlePause = () => {
+    setPaused((prevPause) => !prevPause);
+  }
+
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCarouselIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-    }, 2000); 
-
-    return () => clearInterval(timer);
-  }, [imageUrls.length]); 
-
+    const intervalId = setInterval(() => {
+      handleNextClick();
+    }, 2000);
+    if (!paused) {
+      return () => clearInterval(intervalId);
+    } else {
+      clearInterval(intervalId)
+    }
+  }, [carouselIndex, handleNextClick, handlePrevClick, handleIndicatorClick]);
+  
 
   return (
     <div className='hero'>
@@ -64,7 +73,7 @@ const Hero = () => {
           <img onClick={handleIndicatorClick} id='3' src={carouselIndex === 3 ? circle_filled : circle}  alt="circle" />
         </div>
         <img onClick={handleNextClick} className='right' src={arrow} alt="arrow icon" />
-        <img src={pause} alt="pause" />
+        <img onClick={handlePause} src={paused === true ? play : pause } alt="pause" />
       </div>
     </div>
   )
