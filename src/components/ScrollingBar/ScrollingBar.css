@@ -1,0 +1,59 @@
+.scroll-container {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--light-primary);
+  overflow: hidden;
+}
+
+.scroll-box {
+  white-space: nowrap;
+}
+
+.scroll-box div {
+  display: flex;
+  gap: 2em;
+}
+
+.scroll-box p {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 10px;
+}
+
+.scroll-content {
+  animation: scrolling 30s infinite linear;
+}
+
+.scroll-content img {
+  width: 1.25rem;
+}
+
+.scroll-content p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scrolling {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.LeftToRight {
+  animation: LeftToRight 3s infinite linear;
+}
+
+@keyframes  LeftToRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
