@@ -17,7 +17,7 @@
 
 .scroll-box p {
   font-size: 1rem;
-  color: var(--text);
+  color: var(--font-size-md);
   font-weight: 400;
   line-height: 10px;
 }

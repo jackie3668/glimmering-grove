@@ -38,8 +38,11 @@ const Hero = () => {
       setCarouselIndex(0)
       image.src = imageUrls[carouselIndex]
     } else {
-      setCarouselIndex(carouselIndex+1)
-      image.src = imageUrls[carouselIndex]
+      const imageElement = document.getElementById('hero-carousel-image');
+      if (imageElement) {
+        setCarouselIndex(carouselIndex+1)
+        imageElement.src = imageUrls[carouselIndex];
+      }
     }
   }
 
@@ -49,15 +52,13 @@ const Hero = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      handleNextClick();
+      if (!paused) {
+        handleNextClick();
+      }
     }, 2000);
-    if (!paused) {
-      return () => clearInterval(intervalId);
-    } else {
-      clearInterval(intervalId)
-    }
-  }, [carouselIndex, handleNextClick, handlePrevClick, handleIndicatorClick]);
-  
+
+    return () => clearInterval(intervalId);
+  }, [carouselIndex, paused]);
 
   return (
     <div className='hero'>
