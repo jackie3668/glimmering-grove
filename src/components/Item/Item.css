@@ -1,0 +1,47 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-image {
+  position: relative;
+}
+
+.item img {
+  width: 100%;
+}
+
+.item-sale-tag {
+  bottom: 6%;
+  left: 3%;
+  display: flex;
+  width: 4.5em;
+  height: 1.75rem;
+  border-radius: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: var(--primary);
+}
+
+.item-name {
+  font-size: var(--font-size-sm);
+  padding: 0.5rem 0;
+}
+
+.item-prices {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.item-current-price {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+}
+
+.item-old-price {
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  text-decoration: line-through;
+}

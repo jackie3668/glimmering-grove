@@ -41,11 +41,20 @@ button {
   background-color: var(--text);
   border: none;
   outline: none;
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  letter-spacing: 3px;
-  padding: 1.25rem 2.5rem;
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  padding: 1.25rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
 
+button:hover {
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: scale(1.01);
 }
 
 @media (max-width: 767px) {

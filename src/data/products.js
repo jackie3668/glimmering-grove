@@ -242,7 +242,7 @@ const products = [
     old_price: 40.00,
     description: "Make a statement with these Ember Warm Shimmering Elegant Extravagant Earrings. Perfect for adding a touch of glamour to your look. This product is part of the popular category.",
     images: [p3_1, p3_2, p3_3],
-    category: ["all", "popular"],
+    category: ["all", "popular", "sale"],
     tags: ["ember warm", "shimmering", "extravagant earrings", "popular"],
   },
 
