@@ -1,20 +1,49 @@
 .featured {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 .featured h1 {
   font-size: var(--font-size-xxxl);
   font-weight: 500;
-  padding: 0 1rem;
+  padding: 0 0;
 }
 
 .featured-items {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.25rem;
-  padding: 1rem 1rem;
+  padding: 1rem 0;
 }
 
 .featured button {
   align-self: center;
+}
+
+@media (min-width: 768px) {
+  .featured {
+    padding: 0 3rem;
+  }
+
+  .featured-items {
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured {
+    padding: 0 4rem;
+  }
+
+  .featured-items {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .featured-items {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+
 }

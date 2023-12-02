@@ -1,7 +1,6 @@
 import React from 'react'
 import './Home.css'
-import { Featured, Hero, ScrollingBar } from '../../components'
-import Collections from '../../components/Collections/Collections'
+import { Featured, Hero, ScrollingBar, Collections, Reviews, AboutUs, Newsletter } from '../../components'
 
 const Home = () => {
   return (
@@ -10,6 +9,9 @@ const Home = () => {
       <ScrollingBar />
       <Collections />
       <Featured />
+      <Reviews />
+      <AboutUs />
+      <Newsletter />
     </div>
   )
 }

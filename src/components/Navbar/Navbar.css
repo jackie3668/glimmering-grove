@@ -1,7 +1,6 @@
 .navbar {
   background-color: var(--background);
   border-bottom: 1px solid var(--dark-shadow-primary); 
-
 }
 
 .navbar-scroll-up {
