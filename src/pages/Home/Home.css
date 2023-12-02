@@ -1,0 +1,21 @@
+.scroll-to-top {
+  position: fixed;
+  width: 3rem;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+  cursor: pointer;
+  z-index: 999;
+  border-radius: 5px;
+}
+
+.active {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.scroll-to-top img {
+  padding: 0.5rem;
+  width: 100%;
+  transform: rotate(180deg)
+}

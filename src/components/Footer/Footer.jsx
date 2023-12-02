@@ -1,6 +1,5 @@
 import React from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
 import logo from '../../asset/home/Footer.png'
 import discord from '../../asset/home/discord.png'
 import instagram from '../../asset/home/instagram.png'
