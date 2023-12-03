@@ -20,6 +20,7 @@ import pinterest from '../../asset/home/pinterest.png'
 const Navbar = () => {
   const [scrollUp, setScrollUp] = useState(false)
   const [hidden, setHidden] = useState(true)
+  const [shopbyHidden, setShopbyHidden] = useState(true)
 
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
@@ -50,6 +51,7 @@ const Navbar = () => {
 
   const handleMenuClick = () => {
     setHidden((prev) => !prev)
+    setShopbyHidden(true)
   }
 
   const handleBodyClick = (e) => {
@@ -76,6 +78,18 @@ const Navbar = () => {
   }
 
   document.body.addEventListener('click', handleDropdownClick);
+
+  const handleDrawerClick = () => {
+    setShopbyHidden(false)
+    const targetDiv = document.querySelector('.navbar-mobile-menu-drawer')
+    targetDiv.classList.remove('slide-in-left')
+  }
+
+  const handleDrawerBackClick = () => {
+    setShopbyHidden(true)
+    const targetDiv = document.querySelector('.navbar-mobile-menu-drawer')
+    targetDiv.classList.add('slide-in-left')
+  }
 
   return (
     <div className={`navbar ${scrollUp ? 'navbar-scroll-up' : ''}`}>
@@ -114,11 +128,11 @@ const Navbar = () => {
           <li><Link style={{ textDecoration: 'none'}} to='/'>CONTACT</Link></li>
         </ul>
       </div>
-      <div className={`navbar-mobile-menu-drawer ${hidden ? 'hidden' : ''}`}>
+      <div className={`navbar-mobile-menu-drawer slide-in-left ${hidden ? 'hidden' : ''}`}>
         <div className='navbar-mobile-menu-drawer-items'>
           <ul>
           <li><Link style={{ textDecoration: 'none'}} to='/'>HOME</Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>SHOP BY <img src={mobile_arrow} alt="arrow icon" /></Link></li>
+          <li onClick={handleDrawerClick}><Link style={{ textDecoration: 'none'}} to='/'>SHOP BY <img src={mobile_arrow} alt="arrow icon" /></Link></li>
           <li><Link style={{ textDecoration: 'none'}} to='/'>ABOUT</Link></li>
           <li><Link style={{ textDecoration: 'none'}} to='/'>BLOG</Link></li>
           <li><Link style={{ textDecoration: 'none'}} to='/'>CONTACT</Link></li>
@@ -150,7 +164,18 @@ const Navbar = () => {
             <img src={pinterest} alt="Pinterest Icon" />
           </a>
         </div>
+        <div className={`navbar-mobile-menu-drawer-shopby slide-in-right  ${shopbyHidden ? 'hidden' : ''}`}>
+        <ul>
+          <li onClick={handleDrawerBackClick} className='navbar-mobile-menu-drawer-shopby-back'><Link style={{ textDecoration:'none' }} to='/'><img src={mobile_arrow} alt="" />Back</Link></li>
+          <li><Link style={{ textDecoration:'none' }} to='/'>Shop All</Link></li>
+          <li><Link style={{ textDecoration:'none' }} to='/'>New Arrivals</Link></li>
+          <li><Link style={{ textDecoration:'none' }} to='/'>Best Sellers</Link></li>
+          <li><Link style={{ textDecoration:'none' }} to='/'>Sale</Link></li>
+          <li><Link style={{ textDecoration:'none' }} to='/'>Limited Edition</Link></li>
+        </ul>
       </div>
+      </div>
+
     </div>
   )
 }
