@@ -3,7 +3,8 @@
 }
 
 .shop h1 {
-    padding-top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 .shop {
@@ -12,6 +13,7 @@
     align-items: center;
 }
 
-.shop p {
+.shop .end {
+    padding-top: 4rem;
     font-size: var(--font-size-md);
 }

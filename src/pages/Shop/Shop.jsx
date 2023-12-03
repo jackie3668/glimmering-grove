@@ -38,7 +38,7 @@ const Shop = ( props ) => {
       behavior: 'smooth',
     });
   }
-  
+
   return (
     <div className='items-container shop'>
       <h1>{props.category.toUpperCase()}</h1>
@@ -59,7 +59,7 @@ const Shop = ( props ) => {
         ))}
       </div>
       <button className={showButton? '' : 'hidden'} onClick={handleShowMore}>Show more</button>
-      <p className={showButton? 'hidden' : ''}>--End of page--</p>
+      <p className={`end ${showButton? 'hidden' : ''}`}>--End of page--</p>
     </div>
   )
 }
