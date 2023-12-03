@@ -6,9 +6,9 @@ import Item from '../Item/Item'
 const Featured = () => {
   const featured = []
   return (
-    <div className='featured'>
+    <div className='items-container'>
       <h1>Trending</h1>
-      <div className="featured-items">
+      <div className="item-wrapper">
         {products.map((item, index) => {
           if (featured.length < 4 && item.category.includes('popular')) {
             featured.push(item.id)

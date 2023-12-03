@@ -3,7 +3,7 @@ import './Item.css'
 
 const Item = ( props ) => {
   return (
-    <div className='item'>
+    <div className='item scale-in-center'>
       <div className="item-image">
         <img src={props.image} alt="" />
         {props.category.includes('sale') &&

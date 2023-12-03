@@ -89,7 +89,7 @@ a {
 
 .navbar-desktop-menu-dropdown-items ul {
   color: var(--text);
-  padding: 1rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -7,6 +7,7 @@ import Reviews from "./Reviews/Reviews";
 import Collections from './Collections/Collections'
 import AboutUs from "./AboutUs/AboutUs";
 import Newsletter from "./Newsletter/Newsletter";
+import Item from "./Item/Item";
 
 export {
   Footer,
@@ -17,5 +18,6 @@ export {
   Featured,
   Reviews,
   AboutUs,
-  Newsletter
+  Newsletter,
+  Item
 }

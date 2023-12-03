@@ -1,0 +1,17 @@
+.shop .hidden {
+    display: none;
+}
+
+.shop h1 {
+    padding-top: 2rem;
+}
+
+.shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop p {
+    font-size: var(--font-size-md);
+}
