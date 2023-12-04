@@ -108,11 +108,6 @@
   .footer-section p {
     font-size: var(--font-size-sm);
   }
-
-  .footer-section {
-
-  }
-
 }
 
 @media (min-width: 1440px) {

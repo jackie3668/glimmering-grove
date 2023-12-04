@@ -7,7 +7,6 @@ import arrow from '../../asset/ui/arrow-down-sign-to-navigate.png'
 const Shop = ( props ) => {
   const [visibleItems, setVisibleItems] = useState(8)
   const [showButton, setShowButton] = useState(true)
-  const [showScrollButton, setShowScrollButton] = useState(false);
   const [sortOption, setSortOption] = useState('default')
   const [filterOption, setFilterOption] = useState('all')
   const [combinedProducts, setCombinedProducts] = useState(
@@ -22,24 +21,6 @@ const Shop = ( props ) => {
     setVisibleItems((prev) => (prev + 8))
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollButton(window.scrollY > window.innerHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
-  const handleScroll = (e) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
   const handleFilter = (e) => {
 
     setVisibleItems(8);
@@ -105,9 +86,6 @@ const Shop = ( props ) => {
             <option value="highLow">Price, high to low</option>
           </select>
         </div>
-      </div>
-      <div className={`scroll-to-top ${showScrollButton ? 'active' : ''}`} onClick={handleScroll}>
-        <img src={arrow} alt="" />
       </div>
       <div className='item-wrapper'>
       {combinedProducts.slice(0, visibleItems).map((item, index) => (

@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="footer-logo footer-section">
           <img src={logo} alt="" />
         </div>
-        <div className="footer-section info">
+        <div className="footer-section">
           <h3>Information</h3>
           <ul>
             <li>HOME</li>
@@ -27,17 +27,17 @@ const Footer = () => {
             <li>CONTACT</li>
           </ul>
         </div>
-        <div className="footer-section shop">
+        <div className="footer-section">
           <h3>The Shop</h3>
-            <ul>
-              <li>SHOP</li>
-              <li>PRIVACY POLICY</li>
-              <li>SHIPPING POLICY</li>
-              <li>REFUND POLICY</li>
-              <li>TERMS OF SERVICE</li>
-            </ul>
+          <ul>
+            <li>SHOP</li>
+            <li>PRIVACY POLICY</li>
+            <li>SHIPPING POLICY</li>
+            <li>REFUND POLICY</li>
+            <li>TERMS OF SERVICE</li>
+          </ul>
         </div>
-        <div className="footer-section brand">
+        <div className="footer-section">
           <h3>Glimmering Grove</h3>
           <p>Glimmering Grove, a beacon of elegance and style in the world of jewelry. Crafted with passion and precision, our pieces radiate timeless beauty, capturing the essence of sophistication and luxury.</p>
         </div>
