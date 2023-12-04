@@ -5,6 +5,7 @@
 .shop h1 {
     padding-top: 4rem;
     padding-bottom: 2rem;
+    font-size: var(--font-size-xxxl);
 }
 
 .shop {
@@ -17,3 +18,30 @@
     padding-top: 4rem;
     font-size: var(--font-size-md);
 }
+
+.shop-filter-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: var(--font-size-sm);
+}
+
+.shop-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.shop-filter-option option {
+    font-size: var(--font-size-sm);
+}
+
+.shop-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+

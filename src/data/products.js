@@ -334,7 +334,7 @@ const products = [
   {
     id: 11,
     name: "Engraving Earrings Zodiac Letters Roman Letters Black Circular Earrings",
-    price: 30.00,
+    price: 25.00,
     old_price: 40.00,
     description: "Add a touch of mystique with these Engraving Earrings featuring zodiac letters and Roman letters. The black circular design adds a unique charm. This product is part of the new category.",
     images: [p11_1, p11_2, p11_3, p11_4, p11_5, p11_6],
@@ -357,7 +357,7 @@ const products = [
 {
   id: 13,
   name: "Ding Tea Abstract Swirly Twisted Rings Diamond Engraved Delicate Elegant",
-  price: 30.00,
+  price: 35.00,
   old_price: 40.00,
   description: "Embrace elegance with these Ding Tea Abstract Swirly Twisted Rings. The diamond-engraved details add a delicate touch, making them perfect for both casual and special occasions.",
   images: [p13_1, p13_2, p13_3, p13_4],
@@ -417,7 +417,7 @@ const products = [
 {
   id: 18,
   name: "Abstract Unique Design Pearl Dense Texture",
-  price: 30.00,
+  price: 38.00,
   old_price: 40.00,
   description: "Step into the world of uniqueness with this Abstract Unique Design Pearl Dense Texture jewelry. The intricate design and dense texture make it a perfect addition to your collection.",
   images: [p18_1, p18_2, p18_3, p18_4, p18_5, p18_6],
@@ -441,7 +441,7 @@ const products = [
 {
   id: 20,
   name: "Shimmery Diamond Shining Bling with Pearl Necklace",
-  price: 30.00,
+  price: 40.00,
   old_price: 40.00,
   description: "Radiate elegance with this Shimmery Diamond Shining Bling with Pearl Necklace. The combination of diamonds and pearls creates a dazzling effect, making it a perfect accessory for special occasions.",
   images: [p20_1, p20_2, p20_3, p20_4],
@@ -464,7 +464,7 @@ const products = [
 {
   id: 22,
   name: "Silver Metallic Minimalist Simple Modern Easy to Style",
-  price: 30.00,
+  price: 32.00,
   old_price: 40.00,
   description: "Achieve a modern and minimalist look with this Silver Metallic Minimalist Jewelry. The simple design and silver metallic tones make it easy to style for any occasion.",
   images: [p22_1, p22_2, p22_3, p22_4, p22_5, p22_6, p22_7],
@@ -476,7 +476,7 @@ const products = [
 {
   id: 23,
   name: "Half Pearl Half Gold Chain with Camelia Flower Decoration",
-  price: 30.00,
+  price: 20.00,
   old_price: 40.00,
   description: "Add a touch of elegance with this Half Pearl Half Gold Chain Bracelet featuring a Camelia flower decoration. The unique design makes it a statement piece for your jewelry collection.",
   images: [p23_1, p23_2, p23_3],
@@ -512,7 +512,7 @@ const products = [
 {
   id: 26,
   name: "Camelia Flower Stud Earrings Simple Elegant Modern Pearlescent",
-  price: 30.00,
+  price: 21.00,
   old_price: 40.00,
   description: "Enhance your style with these Camelia Flower Stud Earrings. The simple and elegant design, coupled with a modern pearlescent touch, adds a refined look to your attire.",
   images: [p26_1, p26_2, p26_3, p26_4, p26_5],
@@ -524,7 +524,7 @@ const products = [
 {
   id: 27,
   name: "Half Pearl Half Diamond Shimmering Adjustable Ring Elegant Beautiful",
-  price: 30.00,
+  price: 33.00,
   old_price: 40.00,
   description: "Add a touch of glamour with this Half Pearl Half Diamond Shimmering Adjustable Ring. The shimmering effect and adjustable design make it an elegant and beautiful addition to your jewelry collection.",
   images: [p27_1, p27_2, p27_3],
@@ -560,7 +560,7 @@ const products = [
 {
   id: 30,
   name: "Dainty Blue Heart with Gold Border Earrings Simple Cute Everyday Wear",
-  price: 30.00,
+  price: 36.00,
   old_price: 40.00,
   description: "Express your playful side with these Dainty Blue Heart Earrings. The gold border adds a touch of sophistication, making them suitable for everyday wear with a cute and simple design.",
   images: [p30_1, p30_2, p30_3, p30_4],
@@ -584,7 +584,7 @@ const products = [
 {
   id: 32,
   name: "White Design Mixed with Amber Shimmery Stone Element Decorated with Gold Abstract Pattern Textured Bold Statement Pieces Earrings",
-  price: 30.00,
+  price: 33.00,
   old_price: 40.00,
   description: "Embrace a unique style with these White Design Earrings mixed with Amber Shimmery Stone Element. The gold abstract pattern and textured elements add a bold statement to your jewelry collection.",
   images: [p32_1, p32_2, p32_3, p32_4],
