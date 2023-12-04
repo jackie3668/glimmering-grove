@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
 }
 
 .shop-filter {
@@ -34,14 +34,14 @@
     gap: 1rem;
 }
 
-.shop-filter-option option {
-    font-size: var(--font-size-sm);
-}
-
 .shop-sort {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+}
+
+.shop-filter-sort-select {
+    font-size: var(--font-size-md);
 }
 

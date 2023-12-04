@@ -87,7 +87,7 @@ const Shop = ( props ) => {
 
           { props.category === 'all' && (<div className='shop-filter'>          
             <p>Filter:</p>
-            <select name="" id="" value={filterOption} onChange={handleFilter}>
+            <select name="" id="" value={filterOption} onChange={handleFilter} className="shop-filter-sort-select">
               <option value="all">All</option>
               <option value="new">New</option>
               <option value="popular">Best Seller</option>
@@ -98,7 +98,7 @@ const Shop = ( props ) => {
    
         <div className="shop-sort">
           <label htmlFor="sortOption">Sort:</label>
-          <select id="sortOption" value={sortOption} onChange={handleSort}>
+          <select id="sortOption" value={sortOption} onChange={handleSort} className="shop-filter-sort-select">
             <option value="default">Default</option>
             <option value="name">Name</option>
             <option value="lowHigh">Price, low to high</option>
