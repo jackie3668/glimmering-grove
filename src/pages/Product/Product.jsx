@@ -122,22 +122,22 @@ const Product = () => {
                     <img className='product-details-main-img' src={product.images[imageIndex]} alt="" />
                     <img src={arrow}  className="product-details-img-scroll-right" onClick={handleRightScroll} alt="" />
                     <img className="product-details-img-scroll-left" src={arrow} onClick={handleLeftScroll} alt="" />
-            </div>
-            <div className='product-details-img'>
-                {
-                product.images.map((item, index) => (
-                    <img
-                        key={index}
-                        id={index}
-                        src={item}
-                        className={`${index === imageIndex ? 'highlight' : ''}`}
-                        alt={`Product Image ${index + 1}`}
-                        onClick={handleImageClick}
-                    />
-                ))
-                
-                }
-            </div>
+                </div>
+                <div className='product-details-img'>
+                    {
+                    product.images.map((item, index) => (
+                        <img
+                            key={index}
+                            id={index}
+                            src={item}
+                            className={`${index === imageIndex ? 'highlight' : ''}`}
+                            alt={`Product Image ${index + 1}`}
+                            onClick={handleImageClick}
+                        />
+                    ))
+                    
+                    }
+                </div>
             </div>
             <div className="product-details-info">
                 <h1>{product.name}</h1>

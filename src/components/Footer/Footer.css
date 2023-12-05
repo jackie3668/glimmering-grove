@@ -88,10 +88,6 @@
     gap: 3rem;
   }
 
-  .footer-logo, .footer-section.brand {
-    grid-column: span 2;
-  }
-
   .footer-logo img {
     width: 15rem;
   }
