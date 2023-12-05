@@ -57,6 +57,24 @@ button:active {
   transform: scale(1.01);
 }
 
+.scroll-to-top {
+  position: fixed;
+  width: 3rem;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 999;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top img {
+  padding: 0.5rem;
+  width: 100%;
+  transform: rotate(180deg)
+}
+
 @media (max-width: 767px) {
 
 }

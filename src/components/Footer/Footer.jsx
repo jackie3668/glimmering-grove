@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3>Glimmering Grove</h3>
-          <p>Glimmering Grove, a beacon of elegance and style in the world of jewelry. Crafted with passion and precision, our pieces radiate timeless beauty, capturing the essence of sophistication and luxury.</p>
+          <p>Crafted with passion and precision, our pieces radiate timeless beauty, capturing the essence of sophistication and luxury.</p>
         </div>
       </div>
       <div className="footer-bot">

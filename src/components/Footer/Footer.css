@@ -66,21 +66,17 @@
 
 @media (min-width: 768px) {
   .footer {
-    padding: 2rem 6rem;
+    padding: 2rem;
   }
 
   .footer-top {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .footer-logo img {
-    width: 25rem;
+    width: 10rem;
     align-self: center;
-  }
-
-  .footer-logo, .footer-section.brand {
-    grid-column: span 2;
   }
 }
 
@@ -93,7 +89,7 @@
   }
 
   .footer-logo, .footer-section.brand {
-    grid-column: span 1;
+    grid-column: span 2;
   }
 
   .footer-logo img {
