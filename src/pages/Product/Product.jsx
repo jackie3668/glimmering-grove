@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom';
+import { ShopContext } from '../../context/ShopContext';
 import products from '../../data/products';
 import './Product.css'
 import arrow from '../../asset/ui/arrow-down-sign-to-navigate.png'
@@ -9,15 +10,18 @@ import diamond_ring from '../../asset/ui/diamond-ring.png'
 import diamond from '../../asset/ui/diamond.png'
 import fast from '../../asset/ui/fast.png'
 import product_return from '../../asset/ui/product-return.png'
-import Item from '../../components/Item/Item';
+
 
 const Product = () => {
-    const {productId} = useParams();
-    const product = products.find((e) => e.id === Number(productId))
-    const [imageIndex, setImageIndex] = useState(0)
-    const [sectionOpen, setSectionOpen] = useState(false)
-
-
+    const { products: contextProducts } = useContext(ShopContext);
+    const { productId } = useParams();
+    const { addToCart, addToCartItems, buyNowItems } = useContext(ShopContext);
+    const product = contextProducts.find((e) => e.id === Number(productId));
+    const [imageIndex, setImageIndex] = useState(0);
+    const [sectionOpen, setSectionOpen] = useState(false);
+    const [selectedSize, setSelectedSize] = useState('M'); 
+    const [selectedQuantity, setSelectedQuantity] = useState(1); 
+  
     const handleImageClick = (e) => {
         setImageIndex((prevIndex) => {
             const newIndex = e.target.id;
@@ -104,6 +108,23 @@ const Product = () => {
         });
       }
     
+      
+      const handleSizeChange = (size) => {
+        setSelectedSize(size);
+      };
+    
+      const handleQuantityChange = (quantity) => {
+        setSelectedQuantity(quantity);
+      };
+    
+      const handleAddToCart = () => {
+        addToCart(product.id, selectedSize, 'addToCart', selectedQuantity);
+      };
+    
+      const handleBuyNow = () => {
+        addToCart(product.id, selectedSize, 'buyNow', selectedQuantity);
+      };
+    
   return (
     <div className='product'>
         <div className='product-breadcrums'>
@@ -148,22 +169,47 @@ const Product = () => {
                 <div className="product-details-info-sizes">
                     <p>Size</p>
                     <div className="product-details-info-size-wrapper">
-                        <p>S</p>
-                        <p>M</p>
-                        <p>L</p>
+                        <p
+                            className={`${selectedSize === 'S' ? 'selected' : ''}`}
+                            onClick={() => handleSizeChange('S')}
+                        >
+                            S
+                        </p>
+                        <p
+                            className={`${selectedSize === 'M' ? 'selected' : ''}`}
+                            onClick={() => handleSizeChange('M')}
+                        >
+                            M
+                        </p>
+                        <p
+                            className={`${selectedSize === 'L' ? 'selected' : ''}`}
+                            onClick={() => handleSizeChange('L')}
+                        >
+                            L
+                        </p>
                     </div>
                 </div>
                 <div className="product-details-info-quant">
                     <p className='product-details-info-quant-text'>Quantity</p>
                     <div className="product-details-info-quant-box">
-                        <p className='product-details-info-quant-icon'>-</p>
-                        <p className='product-details-info-quant-quant-text'>1</p>
-                        <p className='product-details-info-quant-icon'>+</p>
+                        <p
+                            className="product-details-info-quant-icon"
+                            onClick={() => handleQuantityChange(Math.max(selectedQuantity - 1, 1))}
+                        >
+                            -
+                        </p>
+                        <p className="product-details-info-quant-quant-text">{selectedQuantity}</p>
+                        <p
+                            className="product-details-info-quant-icon"
+                            onClick={() => handleQuantityChange(selectedQuantity + 1)}
+                        >
+                            +
+                        </p>
                     </div>
                 </div>
                 <div className="product-details-info-buttons">
-                    <button>Add to cart</button>
-                    <button>But it now</button>
+                    <button onClick={handleAddToCart}>Add to cart</button>
+                    <button onClick={handleBuyNow}>Buy it now</button>
                 </div>
                 <div className="product-details-info-description">
                     <p>
