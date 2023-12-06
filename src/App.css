@@ -10,7 +10,7 @@
 :root {
   --base-font-size: 1rem; 
   --font-size-xxxs: 0.4rem;
-  --font-size-xxs: 0.5rem;
+  --font-size-xxs: 0.75rem;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
@@ -83,7 +83,7 @@ button:active {
   /* md, xxxl */
   :root {
     --font-size-xxxs: 0.4rem;
-    --font-size-xxs: 0.5rem;
+    --font-size-xxs: 0.75rem;
     --font-size-xs: 0.75rem;
     --font-size-sm: 1rem;
     --font-size-md: 1rem;
@@ -97,7 +97,7 @@ button:active {
 @media (min-width: 1024px) {
   :root {
     --font-size-xxxs: 0.4rem;
-    --font-size-xxs: 0.5rem;
+    --font-size-xxs:0.75rem;
     --font-size-xs: 1rem;
     --font-size-sm: 1rem;
     --font-size-md: 1.25rem;
@@ -111,14 +111,14 @@ button:active {
 @media (min-width: 1440px) {
   :root {
      --font-size-xxxs: 0.4rem;
-    --font-size-xxs: 0.5rem;
-    --font-size-xs: 1.25rem;
-    --font-size-sm: 1.25rem;
-    --font-size-md: 1.25rem;
-    --font-size-lg: 1.5rem;
-    --font-size-xl: 1.25rem;
-    --font-size-xxl: 1.5rem;
-    --font-size-xxxl: 2.5rem;  
+      --font-size-xxs:0.75rem;
+      --font-size-xs: 1.25rem;
+      --font-size-sm: 1.25rem;
+      --font-size-md: 1.25rem;
+      --font-size-lg: 1.5rem;
+      --font-size-xl: 1.25rem;
+      --font-size-xxl: 1.5rem;
+      --font-size-xxxl: 2.5rem;  
   }
 }
 

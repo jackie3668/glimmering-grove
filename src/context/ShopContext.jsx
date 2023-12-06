@@ -21,8 +21,10 @@ const ShopContextProvider = ( props ) => {
   const [buyNowItems, setBuyNowItems] = useState(getDefaultCart());
 
   const addToCart = (itemID, size, cartType, quantity) => {
+    console.log('Adding to Cart:', itemID, size, cartType, quantity);
+  
     const cartToUpdate = cartType === 'buyNow' ? buyNowItems : addToCartItems;
-
+  
     if (cartType === 'buyNow') {
       setBuyNowItems((prev) => ({
         ...prev,
@@ -32,7 +34,7 @@ const ShopContextProvider = ( props ) => {
         },
       }));
     }
-
+  
     setAddToCartItems((prev) => ({
       ...prev,
       [itemID]: {
@@ -41,10 +43,12 @@ const ShopContextProvider = ( props ) => {
       },
     }));
   };
-
+  
   const removeFromCart = (itemID, size, cartType, quantity) => {
+    console.log('Removing from Cart:', itemID, size, cartType, quantity);
+  
     const cartToUpdate = cartType === 'buyNow' ? buyNowItems : addToCartItems;
-
+  
     if (cartType === 'buyNow') {
       setBuyNowItems((prev) => ({
         ...prev,
@@ -54,7 +58,7 @@ const ShopContextProvider = ( props ) => {
         },
       }));
     }
-
+  
     setAddToCartItems((prev) => ({
       ...prev,
       [itemID]: {
@@ -63,31 +67,44 @@ const ShopContextProvider = ( props ) => {
       },
     }));
   };
-
+  
   const getTotalCartAmount = (cartItems) => {
     let totalAmount = 0;
     for (const itemID in cartItems) {
       for (const size in cartItems[itemID]) {
         if (cartItems[itemID][size] > 0) {
           let itemInfo = products.find((product) => product.id === Number(itemID));
-          totalAmount += itemInfo.new_price * cartItems[itemID][size];
+  
+          if (itemInfo) {
+            console.log(`Adding to Total Amount: ${itemInfo.price} * ${cartItems[itemID][size]} for product ID ${itemID}`);
+            totalAmount += itemInfo.price * cartItems[itemID][size];
+            console.log(totalAmount);
+          } else {
+            console.warn(`Product with ID ${itemID} not found in products array.`);
+          }
         }
       }
     }
     return totalAmount;
   };
+  
 
   const getTotalCartItems = (cartItems) => {
     let totalItem = 0;
     for (const itemID in cartItems) {
       for (const size in cartItems[itemID]) {
         if (cartItems[itemID][size] > 0) {
+          // Log information for debugging
+          console.log(`Adding ${cartItems[itemID][size]} ${size} of item ${itemID} to totalItem.`);
+          
           totalItem += cartItems[itemID][size];
+          console.log(totalItem);
         }
       }
     }
     return totalItem;
   };
+  
 
   const totalAmountAddToCart = getTotalCartAmount(addToCartItems);
   const totalItemsAddToCart = getTotalCartItems(addToCartItems);

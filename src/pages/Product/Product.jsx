@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContext';
 import products from '../../data/products';
@@ -14,8 +14,8 @@ import product_return from '../../asset/ui/product-return.png'
 
 const Product = () => {
     const { products: contextProducts } = useContext(ShopContext);
+    const { addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
     const { productId } = useParams();
-    const { addToCart, addToCartItems, buyNowItems } = useContext(ShopContext);
     const product = contextProducts.find((e) => e.id === Number(productId));
     const [imageIndex, setImageIndex] = useState(0);
     const [sectionOpen, setSectionOpen] = useState(false);
@@ -133,7 +133,7 @@ const Product = () => {
             {product.name} 
         </div>
         <div className='product-details'>
-            <h1 className='product-details-mobile-header'>{product.name}
+            <h1 className='product-details-mobile-header'>{product.name}{getTotalCartItems()}
                 {product.category.includes('sale') &&
                 <div className="product-details-mobile-item-sale-tag">Sale</div>
                 }

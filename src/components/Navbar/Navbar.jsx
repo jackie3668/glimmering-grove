@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import basket from '../../asset/ui/basket-shopping-simple.png'
@@ -16,11 +16,14 @@ import whatsapp from '../../asset/home/whatsapp.png'
 import youtube from '../../asset/home/youtube.png'
 import tiktok from '../../asset/home/tik-tok.png'
 import pinterest from '../../asset/home/pinterest.png'
+import { ShopContext } from '../../context/ShopContext';
 
 const Navbar = () => {
   const [scrollUp, setScrollUp] = useState(false)
   const [hidden, setHidden] = useState(true)
   const [shopbyHidden, setShopbyHidden] = useState(true)
+  const { products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
+
 
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
@@ -108,7 +111,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-search-cart">
           <img src={search} alt="search icon" />
-          <img src={basket} alt="basket icon" />
+          <div className='navbar-cart'>
+            <img src={basket} alt="basket icon" />
+            <p>{getTotalCartItems(addToCartItems)}</p>
+          </div>
         </div>
         <div className="navbar-logo">
           <Link to='/'><img src={logo} alt="logo" /></Link>

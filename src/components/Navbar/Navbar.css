@@ -59,7 +59,28 @@
   height: 1.5rem;
   cursor: pointer;
 }
-  
+
+.navbar-cart {
+  position: relative;
+}
+
+.navbar-cart p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.1rem;
+  padding-left: 0.1rem;
+  bottom: -3px;
+  right: -5px;
+  background-color: var(--text);
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--background);
+  font-size: var(--font-size-xxs);
+  border-radius: 50%
+}
+
 a {
   color: inherit;
 }
