@@ -188,10 +188,6 @@ const Product = () => {
                         <p className={`${sectionOpen === true ? "open" : ''}`}>Embrace worry-free shopping with our flexible return and exchange policy. We're committed to ensuring your satisfaction, offering a seamless process for returns and exchanges to make your experience delightful.</p>
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
         <div className='product-recommendations'>
