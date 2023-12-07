@@ -19,7 +19,7 @@ const Product = () => {
     const product = contextProducts.find((e) => e.id === Number(productId));
     const [imageIndex, setImageIndex] = useState(0);
     const [sectionOpen, setSectionOpen] = useState(false);
-    const [selectedSize, setSelectedSize] = useState('M'); 
+    const [selectedSize, setSelectedSize] = useState(''); 
     const [selectedQuantity, setSelectedQuantity] = useState(1); 
   
     const handleImageClick = (e) => {
@@ -109,8 +109,13 @@ const Product = () => {
       }
     
       
-      const handleSizeChange = (size) => {
-        setSelectedSize(size);
+      const handleSizeChange = (e) => {
+        const currentSelected = document.querySelector('.selected') 
+        if (currentSelected) {
+            currentSelected.classList.remove('selected')
+        }
+        e.target.classList.add('selected')
+        setSelectedSize(e.target.textContent);
       };
     
       const handleQuantityChange = (quantity) => {
@@ -171,19 +176,19 @@ const Product = () => {
                     <div className="product-details-info-size-wrapper">
                         <p
                             className={`${selectedSize === 'S' ? 'selected' : ''}`}
-                            onClick={() => handleSizeChange('S')}
+                            onClick={handleSizeChange}
                         >
                             S
                         </p>
                         <p
                             className={`${selectedSize === 'M' ? 'selected' : ''}`}
-                            onClick={() => handleSizeChange('M')}
+                            onClick={handleSizeChange}
                         >
                             M
                         </p>
                         <p
                             className={`${selectedSize === 'L' ? 'selected' : ''}`}
-                            onClick={() => handleSizeChange('L')}
+                            onClick={handleSizeChange}
                         >
                             L
                         </p>
@@ -198,7 +203,7 @@ const Product = () => {
                         >
                             -
                         </p>
-                        <p className="product-details-info-quant-quant-text">{selectedQuantity}</p>
+                        <p className="product-details-info-quant-number">{selectedQuantity}</p>
                         <p
                             className="product-details-info-quant-icon"
                             onClick={() => handleQuantityChange(selectedQuantity + 1)}

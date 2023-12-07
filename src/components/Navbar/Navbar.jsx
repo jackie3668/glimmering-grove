@@ -17,12 +17,13 @@ import youtube from '../../asset/home/youtube.png'
 import tiktok from '../../asset/home/tik-tok.png'
 import pinterest from '../../asset/home/pinterest.png'
 import { ShopContext } from '../../context/ShopContext';
+import check from '../../asset/ui/check.png'
 
 const Navbar = () => {
   const [scrollUp, setScrollUp] = useState(false)
   const [hidden, setHidden] = useState(true)
   const [shopbyHidden, setShopbyHidden] = useState(true)
-  const { products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
+  const { cartDetails, setCartDetails, products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
 
 
   useEffect(() => {
@@ -100,8 +101,52 @@ const Navbar = () => {
     targetDiv.classList.add('slide-in-left')
   }
 
+  useEffect(() => {
+    if (cartDetails) {
+      const timeoutId = setTimeout(() => {
+        setCartDetails(false);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [cartDetails]);
+  
+
+  const handleCartClick = (e) => {
+    console.log(e.target.parentNode);
+      if (e.target.closest('.navbar-cart')) {
+      const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
+      targetDiv.classList.add('active')
+      return;
+    } else if (e.target.classList.contains('cart-open')) {
+    
+      const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
+      targetDiv.classList.add('active')
+      return;
+    } else {
+      const targetDiv = document.querySelector('.navbar-cart-details-wrapper');
+      targetDiv.classList.remove('active');
+    }
+  };
+  
+
+  document.body.addEventListener('click', handleCartClick);
+
   return (
     <div className={`navbar ${scrollUp ? 'navbar-scroll-up' : ''}`}>
+      <div className={`navbar-cart-details-wrapper cart-open ${cartDetails ? 'active' : ''}`}>
+        <div className="navbar-cart-details-wrapper-header">
+          <div><img src={check} alt="" />Item added to your cart</div>
+          <img src={close} onClick={handleCartClick} alt="" />
+        </div>
+        <div className="navbar-cart-details-wrapper-items"></div>
+        <div className="navbar-cart-details-wrapper-buttons"></div>
+        <div onClick={handleCartClick} className="navbar-cart-details-wrapper-continue">
+          Continue shopping
+        </div>
+      </div>
       <div className="navbar-announcement">
         Free shipping on all orders over $200
       </div>
@@ -111,7 +156,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-search-cart">
           <img src={search} alt="search icon" />
-          <div className='navbar-cart'>
+          <div className='navbar-cart' onClick={handleCartClick}>
             <img src={basket} alt="basket icon" />
             <p>{getTotalCartItems(addToCartItems)}</p>
           </div>

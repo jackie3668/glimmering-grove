@@ -144,7 +144,7 @@
     border-radius:50px;
 }
 
-.product-details-info-size-wrapper p:active {
+.product-details-info-size-wrapper p.selected {
     background-color: var(--text);
     color: var(--background);
 }
@@ -159,6 +159,11 @@
     gap: 1rem;
     margin-bottom: 2rem;
 }
+
+.product-details-info-quant-number {
+    font-size: var(--font-size-xl);
+}
+
 
 .product-details-info-quant-box {
     display: flex;
