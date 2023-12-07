@@ -21,6 +21,7 @@ import check from '../../asset/ui/check.png'
 
 const Navbar = () => {
   const [scrollUp, setScrollUp] = useState(false)
+  const [showNav, setShowNav] = useState(false)
   const [hidden, setHidden] = useState(true)
   const [shopbyHidden, setShopbyHidden] = useState(true)
   const { cartDetails, setCartDetails, products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
@@ -34,6 +35,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setHidden(true)
       const currentScroll = window.scrollY;
+      const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
+      targetDiv.classList.remove('active')
 
       if (currentScroll < lastScrollTop && currentScroll > initialOffsetTop) {
         setScrollUp(true);
@@ -103,9 +106,11 @@ const Navbar = () => {
 
   useEffect(() => {
     if (cartDetails) {
+      setShowNav(true);
       const timeoutId = setTimeout(() => {
+        setShowNav(false);
         setCartDetails(false);
-      }, 3000);
+      }, 1000);
 
       return () => {
         clearTimeout(timeoutId);
@@ -115,34 +120,84 @@ const Navbar = () => {
   
 
   const handleCartClick = (e) => {
-    console.log(e.target.parentNode);
-      if (e.target.closest('.navbar-cart')) {
+    if (e.target.classList.contains('cart-open')) {
       const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
       targetDiv.classList.add('active')
       return;
-    } else if (e.target.classList.contains('cart-open')) {
-    
+    }
+    else if (e.target.closest('.navbar-cart-details-wrapper-continue')  ) {
+      const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
+      targetDiv.classList.remove('active')
+      return;
+    } 
+    else if (e.target.closest('.navbar-cart-details-wrapper')  ) {
       const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
       targetDiv.classList.add('active')
       return;
-    } else {
+    }
+    else {
       const targetDiv = document.querySelector('.navbar-cart-details-wrapper');
       targetDiv.classList.remove('active');
     }
   };
-  
+
 
   document.body.addEventListener('click', handleCartClick);
 
   return (
-    <div className={`navbar ${scrollUp ? 'navbar-scroll-up' : ''}`}>
+    <div className={`navbar ${scrollUp ? 'navbar-scroll-up' : ''} ${showNav ? 'show-nav' : ''}`}>      
       <div className={`navbar-cart-details-wrapper cart-open ${cartDetails ? 'active' : ''}`}>
         <div className="navbar-cart-details-wrapper-header">
           <div><img src={check} alt="" />Item added to your cart</div>
-          <img src={close} onClick={handleCartClick} alt="" />
+          <img className='navbar-cart-details-wrapper-continue' src={close} onClick={handleCartClick} alt="" />
         </div>
-        <div className="navbar-cart-details-wrapper-items"></div>
-        <div className="navbar-cart-details-wrapper-buttons"></div>
+        <div className="navbar-cart-details-wrapper-items">
+        {products
+          .slice()
+          .sort((a, b) => {
+            const aTimestamp = addToCartItems[a.id]?.addedTimestamp || 0;
+            const bTimestamp = addToCartItems[b.id]?.addedTimestamp || 0;
+            return bTimestamp - aTimestamp;
+          })
+          .map((item) => {
+            const sizes = ['S', 'M', 'L'];
+            return (
+              <div key={item.id}>
+                {sizes.map((size) => (
+                  addToCartItems[item.id] && addToCartItems[item.id][size] > 0 && (
+                    <div className='navbar-cart-details-wrapper-item' key={item.id + size}>
+                      <img src={products[item.id-1].images[0]} alt="" /> 
+                      <div className="navbar-cart-details-wrapper-item-detail">
+                        <h3>{products[item.id-1].name}</h3>
+                        <div className="navbar-cart-details-wrapper-item-detail-quant-size">
+                          <p>Size: {size}</p>
+                          <p>Quantity: {addToCartItems[item.id][size]}</p>
+                        </div>
+                        <div className="navbar-cart-details-wrapper-item-detail-price">
+                          <p>${addToCartItems[item.id][size] * products[item.id - 1].price}.00 USD</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                ))}
+              </div>
+            );
+          })}
+        </div>
+        <div className="navbar-cart-details-wrapper-total">
+          Total: ${getTotalCartAmount(addToCartItems)}.00 USD
+        </div>
+
+        <div className="navbar-cart-details-wrapper-shipping">
+        { (200 - getTotalCartAmount(addToCartItems)) > 0 ? (
+          <span>Buy ${ (200 - getTotalCartAmount(addToCartItems)) }.00 USD more to enjoy FREE EXPRESS SHIPPING!</span>
+        ) : (
+          <span>Congrats! You get FREE EXPRESS SHIPPING!</span>
+        ) }
+        </div>
+        <div className="navbar-cart-details-wrapper-button">
+          <button>Check out</button>
+        </div>
         <div onClick={handleCartClick} className="navbar-cart-details-wrapper-continue">
           Continue shopping
         </div>
@@ -156,9 +211,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-search-cart">
           <img src={search} alt="search icon" />
-          <div className='navbar-cart' onClick={handleCartClick}>
-            <img src={basket} alt="basket icon" />
-            <p>{getTotalCartItems(addToCartItems)}</p>
+          <div className='navbar-cart cart-open' onClick={handleCartClick}>
+            <img className='cart-open' src={basket} alt="basket icon" />
+            <p className='cart-open'>{getTotalCartItems(addToCartItems)}</p>
           </div>
         </div>
         <div className="navbar-logo">

@@ -20,9 +20,9 @@ const Item = ( props ) => {
       </div>
       <p className='item-name'>{props.name}</p>
       <div className="item-prices">
-        <p className='item-current-price'>${props.price} USD</p>
+        <p className='item-current-price'>${props.price}.00 USD</p>
         {props.category.includes('sale') &&
-          <p className='item-old-price'>${props.old_price} USD</p>
+          <p className='item-old-price'>${props.old_price}.00 USD</p>
         }
       </div>
     </div>

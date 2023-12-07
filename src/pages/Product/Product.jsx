@@ -123,7 +123,12 @@ const Product = () => {
       };
     
       const handleAddToCart = () => {
-        addToCart(product.id, selectedSize, 'addToCart', selectedQuantity);
+        if (selectedSize) {
+            addToCart(product.id, selectedSize, 'addToCart', selectedQuantity);
+        }
+        else {
+            console.log('no size');
+        }
       };
     
       const handleBuyNow = () => {
@@ -138,7 +143,7 @@ const Product = () => {
             {product.name} 
         </div>
         <div className='product-details'>
-            <h1 className='product-details-mobile-header'>{product.name}{getTotalCartItems()}
+            <h1 className='product-details-mobile-header'>{product.name}
                 {product.category.includes('sale') &&
                 <div className="product-details-mobile-item-sale-tag">Sale</div>
                 }
@@ -161,15 +166,14 @@ const Product = () => {
                             onClick={handleImageClick}
                         />
                     ))
-                    
                     }
                 </div>
             </div>
             <div className="product-details-info">
                 <h1>{product.name}</h1>
                 <div className="product-details-info-prices">
-                    <h3 className='product-details-info-new-price'>${product.price} USD</h3>
-                {product.category.includes('sale') && <h3 className='product-details-info-old-price'> ${product.old_price} USD</h3>} 
+                    <h3 className='product-details-info-new-price'>${product.price}.00 USD</h3>
+                {product.category.includes('sale') && <h3 className='product-details-info-old-price'> ${product.old_price}.00 USD</h3>} 
                 </div>
                 <div className="product-details-info-sizes">
                     <p>Size</p>
@@ -213,7 +217,7 @@ const Product = () => {
                     </div>
                 </div>
                 <div className="product-details-info-buttons">
-                    <button onClick={handleAddToCart}>Add to cart</button>
+                    <button  className='cart-open' onClick={handleAddToCart}>Add to cart</button>
                     <button onClick={handleBuyNow}>Buy it now</button>
                 </div>
                 <div className="product-details-info-description">

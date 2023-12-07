@@ -6,8 +6,8 @@ export const ShopContext = createContext(null);
 const getDefaultCart = () => {
   let cart = {};
 
-  for (let index = 0; index < products.length; index++) {
-    cart[index + 1] = { 
+  for (let index = 1; index <= products.length; index++) {
+    cart[index] = { 
       S: 0,
       M: 0,
       L: 0,
@@ -22,7 +22,7 @@ const ShopContextProvider = ( props ) => {
   const [cartDetails, setCartDetails] = useState(false)
 
   const addToCart = (itemID, size, cartType, quantity) => {
-    console.log('Adding to Cart:', itemID, size, cartType, quantity);
+    console.log('Adding to Cart:', itemID, cartType, quantity);
   
     const cartToUpdate = cartType === 'buyNow' ? buyNowItems : addToCartItems;
   
@@ -80,7 +80,6 @@ const ShopContextProvider = ( props ) => {
           if (itemInfo) {
             console.log(`Adding to Total Amount: ${itemInfo.price} * ${cartItems[itemID][size]} for product ID ${itemID}`);
             totalAmount += itemInfo.price * cartItems[itemID][size];
-            console.log(totalAmount);
           } else {
             console.warn(`Product with ID ${itemID} not found in products array.`);
           }
@@ -95,12 +94,8 @@ const ShopContextProvider = ( props ) => {
     let totalItem = 0;
     for (const itemID in cartItems) {
       for (const size in cartItems[itemID]) {
-        if (cartItems[itemID][size] > 0) {
-          console.log(`Adding ${cartItems[itemID][size]} ${size} of item ${itemID} to totalItem.`);
-          
-          totalItem += cartItems[itemID][size];
-          console.log(totalItem);
-        }
+        if (cartItems[itemID][size] > 0) {          
+          totalItem += cartItems[itemID][size];        }
       }
     }
     return totalItem;

@@ -280,6 +280,8 @@
 
     .product-details-mobile-header {
         font-size: var(--font-size-xxl);
+        width: 100%;
+        text-align: start;
     }
 
     .product-breadcrums {
