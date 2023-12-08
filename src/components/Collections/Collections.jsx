@@ -6,6 +6,7 @@ import collection_2 from '../../asset/collections/2.png'
 import collection_3 from '../../asset/collections/3.png'
 import collection_4 from '../../asset/collections/4.png'
 import arrow from '../../asset/ui/right-arrow.png'
+
 const Collections = () => {
   const handleScrollToTop = (e) => {
     window.scrollTo({

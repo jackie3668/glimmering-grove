@@ -1,0 +1,53 @@
+.about {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.about-header {
+  text-align: center;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+}
+
+.about-values,
+.about-mission,
+.about-ethics {
+  margin-top: 2.5rem;
+}
+
+.about h2,
+.about p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .about {
+    padding: 0.625rem;
+  }
+
+  .about h2 {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .about h2 {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about {
+    max-width: 56.25rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about {
+    max-width: 62.5rem;
+  }
+}
