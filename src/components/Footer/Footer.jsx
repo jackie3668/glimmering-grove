@@ -9,8 +9,15 @@ import whatsapp from '../../asset/home/whatsapp.png'
 import youtube from '../../asset/home/youtube.png'
 import tiktok from '../../asset/home/tik-tok.png'
 import pinterest from '../../asset/home/pinterest.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  const handleScrollToTop = (e) => {
+    window.scrollTo({
+      top: 0
+    });
+  }
+
   return (
     <div className='footer'>
       <div className="footer-top">
@@ -20,21 +27,21 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Information</h3>
           <ul>
-            <li>HOME</li>
-            <li>ABOUT</li>
-            <li>FAQ</li>
-            <li>BLOG</li>
-            <li>CONTACT</li>
+            <li><Link to="/" onClick={handleScrollToTop}>HOME</Link></li>
+            <li><Link to="/about" onClick={handleScrollToTop}>ABOUT</Link></li>
+            <li><Link to="/faq" onClick={handleScrollToTop}>FAQ</Link></li>
+            <li><Link to="/blog" onClick={handleScrollToTop}>BLOG</Link></li>
+            <li><Link to="/contact" onClick={handleScrollToTop}>CONTACT</Link></li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>The Shop</h3>
           <ul>
-            <li>SHOP</li>
-            <li>PRIVACY POLICY</li>
-            <li>SHIPPING POLICY</li>
-            <li>REFUND POLICY</li>
-            <li>TERMS OF SERVICE</li>
+            <li><Link to="/all" onClick={handleScrollToTop}>SHOP</Link></li>
+            <li><Link to="/privacy-policy" onClick={handleScrollToTop}>PRIVACY POLICY</Link></li>
+            <li><Link to="/shipping-policy" onClick={handleScrollToTop}>SHIPPING POLICY</Link></li>
+            <li><Link to="/refund-policy" onClick={handleScrollToTop}>REFUND POLICY</Link></li>
+            <li><Link to="/terms-of-service" onClick={handleScrollToTop}>TERMS OF SERVICE</Link></li>
           </ul>
         </div>
         <div className="footer-section">

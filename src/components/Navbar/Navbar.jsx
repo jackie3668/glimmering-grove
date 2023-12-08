@@ -26,11 +26,15 @@ const Navbar = () => {
   const [shopbyHidden, setShopbyHidden] = useState(true)
   const { cartDetails, setCartDetails, products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
 
+  
+  const handleScrollToTop = (e) => {
+    window.scrollTo({
+      top: 0
+    });
+  }
 
   useEffect(() => {
-    const navbar = document.querySelector('.navbar');
-    const initialOffsetTop = navbar.offsetTop;
-    let lastScrollTop = 0;
+    let lastScrollTop = 0
 
     const handleScroll = () => {
       setHidden(true)
@@ -38,7 +42,7 @@ const Navbar = () => {
       const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
       targetDiv.classList.remove('active')
 
-      if (currentScroll < lastScrollTop && currentScroll > initialOffsetTop) {
+      if (currentScroll < lastScrollTop && currentScroll > window.innerHeight) {
         setScrollUp(true);
       } else if (currentScroll === 0) {
         setScrollUp(false)
@@ -201,7 +205,7 @@ const Navbar = () => {
         ) }
         </div>
         <div className="navbar-cart-details-wrapper-button">
-          <Link to="/cart">
+          <Link onClick={handleScrollToTop} to="/cart">
             <button onClick={handleCartClick} className='navbar-cart-details-wrapper-checkout'>Check out</button>
           </Link>
         </div>
@@ -224,37 +228,37 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-logo">
-          <Link to='/'><img src={logo} alt="logo" /></Link>
+          <Link onClick={handleScrollToTop} to='/'><img src={logo} alt="logo" /></Link>
         </div>
       </div>
       <div className="navbar-desktop-menu">
         <ul>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>HOME</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/'>HOME</Link></li>
           <li onClick={handleDropdownClick} className='navbar-desktop-menu-dropdown-menu'>SHOP BY 
             <img className='img' src={arrow} alt="drop down menu" />
             <div className="navbar-desktop-menu-dropdown-items">
             <ul>
-              <li className="navbar-desktop-menu-dropdown-item"><Link style={{ textDecoration: 'none' }} to='/all'>Shop All</Link></li>
-              <li className="navbar-desktop-menu-dropdown-item"><Link style={{ textDecoration: 'none' }} to='/new'>New Arrivals</Link></li>
-              <li className="navbar-desktop-menu-dropdown-item"><Link style={{ textDecoration: 'none' }} to='/popular'>Best Sellers</Link></li>
-              <li className="navbar-desktop-menu-dropdown-item"><Link style={{ textDecoration: 'none' }} to='/sale'>Sale</Link></li>
-              <li className="navbar-desktop-menu-dropdown-item"><Link style={{ textDecoration: 'none' }} to='/exclusive'>Limited Edition</Link></li>
+              <li className="navbar-desktop-menu-dropdown-item"><Link onClick={handleScrollToTop} style={{ textDecoration: 'none' }} to='/all'>Shop All</Link></li>
+              <li className="navbar-desktop-menu-dropdown-item"><Link onClick={handleScrollToTop} style={{ textDecoration: 'none' }} to='/new'>New Arrivals</Link></li>
+              <li className="navbar-desktop-menu-dropdown-item"><Link onClick={handleScrollToTop} style={{ textDecoration: 'none' }} to='/popular'>Best Sellers</Link></li>
+              <li className="navbar-desktop-menu-dropdown-item"><Link onClick={handleScrollToTop} style={{ textDecoration: 'none' }} to='/sale'>Sale</Link></li>
+              <li className="navbar-desktop-menu-dropdown-item"><Link onClick={handleScrollToTop} style={{ textDecoration: 'none' }} to='/exclusive'>Limited Edition</Link></li>
             </ul>
             </div>
           </li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>ABOUT</Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>BLOG</Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>CONTACT</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/about'>ABOUT</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/blog'>BLOG</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/contact'>CONTACT</Link></li>
         </ul>
       </div>
       <div className={`navbar-mobile-menu-drawer slide-in-left ${hidden ? 'hidden' : ''}`}>
         <div className='navbar-mobile-menu-drawer-items'>
           <ul>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>HOME</Link></li>
-          <li onClick={handleDrawerClick} className='navbar-mobile-menu-drawer-shopall do-not-close'><Link style={{ textDecoration: 'none'}} to='/'>SHOP BY <img src={mobile_arrow} alt="arrow icon" /></Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>ABOUT</Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>BLOG</Link></li>
-          <li><Link style={{ textDecoration: 'none'}} to='/'>CONTACT</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/'>HOME</Link></li>
+          <li onClick={handleDrawerClick} className='navbar-mobile-menu-drawer-shopall do-not-close'><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/'>SHOP BY <img src={mobile_arrow} alt="arrow icon" /></Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/about'>ABOUT</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/blog'>BLOG</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration: 'none'}} to='/contact'>CONTACT</Link></li>
           </ul>
         </div>
         <div className="footer-bot-socials">
@@ -286,11 +290,11 @@ const Navbar = () => {
         <div className={`navbar-mobile-menu-drawer-shopby slide-in-right  ${shopbyHidden ? 'hidden' : ''}`}>
         <ul>
           <li onClick={handleDrawerBackClick} className='navbar-mobile-menu-drawer-shopby-back do-not-close'><Link style={{ textDecoration:'none' }} to='/'><img src={mobile_arrow} alt="" />Back</Link></li>
-          <li><Link style={{ textDecoration:'none' }} to='/all'>Shop All</Link></li>
-          <li><Link style={{ textDecoration:'none' }} to='/new'>New Arrivals</Link></li>
-          <li><Link style={{ textDecoration:'none' }} to='/popular'>Best Sellers</Link></li>
-          <li><Link style={{ textDecoration:'none' }} to='/sale'>Sale</Link></li>
-          <li><Link style={{ textDecoration:'none' }} to='/exclusive'>Limited Edition</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration:'none' }} to='/all'>Shop All</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration:'none' }} to='/new'>New Arrivals</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration:'none' }} to='/popular'>Best Sellers</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration:'none' }} to='/sale'>Sale</Link></li>
+          <li><Link onClick={handleScrollToTop} style={{ textDecoration:'none' }} to='/exclusive'>Limited Edition</Link></li>
         </ul>
       </div>
       </div>

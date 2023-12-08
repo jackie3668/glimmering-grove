@@ -6,6 +6,10 @@
   padding: 3rem;
 }
 
+.footer a {
+  text-decoration: none;
+}
+
 .footer-section {
   display: flex;
   flex-direction: column;

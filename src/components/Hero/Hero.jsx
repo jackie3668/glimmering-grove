@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 import heroBg1 from '../../asset/hero/1.png';
 import heroBg2 from '../../asset/hero/2.png';
@@ -15,6 +16,7 @@ const Hero = () => {
   const imageUrls = [heroBg1, heroBg2, heroBg3, heroBg4];
   const [carouselIndex, setCarouselIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const pages = ['new', 'popular', 'exclusive', 'sale']
 
   const image = document.getElementById('hero-carousel-image');
 
@@ -63,7 +65,7 @@ const Hero = () => {
   return (
     <div className='hero'>
       <div className="hero-carousel-container">
-        <img id='hero-carousel-image' src={imageUrls[carouselIndex]} alt="" />
+        <Link to={`/${pages[carouselIndex]}`}><img id='hero-carousel-image' src={imageUrls[carouselIndex]} alt="" /></Link>
       </div>
       <div className="hero-slider">
         <img onClick={handlePrevClick} className='left' src={arrow} alt="arrow icon" />

@@ -2,8 +2,15 @@ import React from 'react'
 import './Featured.css'
 import products from '../../data/products'
 import Item from '../Item/Item'
+import { Link } from 'react-router-dom'
 
 const Featured = () => {
+  const handleScrollToTop = (e) => {
+    window.scrollTo({
+      top: 0
+    });
+  }
+
   const featured = []
   return (
     <div className='items-container'>
@@ -16,8 +23,7 @@ const Featured = () => {
           }
         })}
       </div>
-      <button>View all products</button>
-
+        <Link onClick={handleScrollToTop} to='/new'><button>View all products</button></Link>
     </div>
   )
 }
