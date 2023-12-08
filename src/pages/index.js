@@ -4,6 +4,7 @@ import Home from "./Home/Home";
 import Shop from "./Shop/Shop";
 import Contact from "./Contact/Contact";
 import Product from './Product/Product'
+import Cart from "./Cart/Cart";
 
 export {
   About,
@@ -12,4 +13,5 @@ export {
   Shop,
   Contact,
   Product,
+  Cart
 }

@@ -35,15 +35,18 @@ const ShopContextProvider = ( props ) => {
         },
       }));
     }
-  
-    setCartDetails(true);
-    setAddToCartItems((prev) => ({
-      ...prev,
-      [itemID]: {
-        ...prev[itemID],
-        [size]: prev[itemID][size] + quantity,
-      },
-    }));
+
+    else {
+      setCartDetails(true);
+      setAddToCartItems((prev) => ({
+        ...prev,
+        [itemID]: {
+          ...prev[itemID],
+          [size]: prev[itemID][size] + quantity,
+        },
+      }));
+    }
+
   };
   
   const removeFromCart = (itemID, size, cartType, quantity) => {
@@ -61,13 +64,16 @@ const ShopContextProvider = ( props ) => {
       }));
     }
   
-    setAddToCartItems((prev) => ({
-      ...prev,
-      [itemID]: {
-        ...prev[itemID],
-        [size]: Math.max(prev[itemID][size] - quantity, 0),
-      },
-    }));
+    else {
+      setAddToCartItems((prev) => ({
+        ...prev,
+        [itemID]: {
+          ...prev[itemID],
+          [size]: Math.max(prev[itemID][size] - quantity, 0),
+        },
+      }));
+    }
+    
   };
   
   const getTotalCartAmount = (cartItems) => {

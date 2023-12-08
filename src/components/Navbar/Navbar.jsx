@@ -110,7 +110,7 @@ const Navbar = () => {
       const timeoutId = setTimeout(() => {
         setShowNav(false);
         setCartDetails(false);
-      }, 1000);
+      }, 2000);
 
       return () => {
         clearTimeout(timeoutId);
@@ -125,7 +125,12 @@ const Navbar = () => {
       targetDiv.classList.add('active')
       return;
     }
-    else if (e.target.closest('.navbar-cart-details-wrapper-continue')  ) {
+    else if (e.target.closest('.navbar-cart-details-wrapper-continue')) {
+      const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
+      targetDiv.classList.remove('active')
+      return;
+    } 
+    else if (e.target.closest('.navbar-cart-details-wrapper-checkout')) {
       const targetDiv = document.querySelector('.navbar-cart-details-wrapper')
       targetDiv.classList.remove('active')
       return;
@@ -196,14 +201,16 @@ const Navbar = () => {
         ) }
         </div>
         <div className="navbar-cart-details-wrapper-button">
-          <button>Check out</button>
+          <Link to="/cart">
+            <button onClick={handleCartClick} className='navbar-cart-details-wrapper-checkout'>Check out</button>
+          </Link>
         </div>
         <div onClick={handleCartClick} className="navbar-cart-details-wrapper-continue">
           Continue shopping
         </div>
       </div>
       <div className="navbar-announcement">
-        Free shipping on all orders over $200
+        Free shipping on all orders over $200.00 USD
       </div>
       <div className="navbar-items">
         <div className="navbar-mobile-menu">

@@ -412,6 +412,11 @@ a {
     padding: 0.25rem 0;
     font-size: var(--font-size-sm);
   }
+  
+  .navbar-mobile-menu-drawer,
+  .navbar-mobile-menu-drawer-shopby {
+    display: none;
+  }
 }
 
 @media (min-width: 1440px) {
