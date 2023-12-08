@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { ShopContext } from '../../context/ShopContext';
 import './Cart.css'
 import trash from '../../asset/ui/trash.png'
 
 const Cart = () => {
-  const { cartDetails, setCartDetails, products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
+  const { cartDetails, setCartDetails, setAddToCartItems, products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
 
   const handleQuantityChange = (itemID, size, action) => {
     if (action === 'decrement') {
@@ -14,13 +15,22 @@ const Cart = () => {
     }
   };
 
+  const handleClear = (itemID, size) => {
+    setAddToCartItems((prev) => ({
+      ...prev,
+      [itemID]: {
+        ...prev[itemID],
+        [size]: 0,
+      },
+    }));
+  };
+  
   return (
     <div className='cart'>
       <div className="cart-header">
-        <p>Back to shopping</p>
+        <Link to='/all'><p>Back to shopping</p></Link>
         <h1>Your Cart</h1>
       </div>
-  
       <div className="cart-wrapper">
         {products.map((item) => {
           const sizes = ['S', 'M', 'L']
@@ -54,7 +64,7 @@ const Cart = () => {
                                 +
                             </p>
                           </div>
-                          <img src={trash} alt="" />
+                          <img onClick={() => handleClear(item.id, size)} src={trash} alt="" />
                         </div>
                     </div>
                   )

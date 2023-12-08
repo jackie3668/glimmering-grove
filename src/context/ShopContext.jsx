@@ -106,15 +106,8 @@ const ShopContextProvider = ( props ) => {
     }
     return totalItem;
   };
-  
 
-  const totalAmountAddToCart = getTotalCartAmount(addToCartItems);
-  const totalItemsAddToCart = getTotalCartItems(addToCartItems);
-
-  const totalAmountBuyNow = getTotalCartAmount(buyNowItems);
-  const totalItemsBuyNow = getTotalCartItems(buyNowItems);
-
-  const contextValue = { products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems, cartDetails, setCartDetails };
+  const contextValue = { products, addToCartItems, buyNowItems, addToCart, setAddToCartItems, removeFromCart, getTotalCartAmount, getTotalCartItems, cartDetails, setCartDetails };
 
   return (
     <ShopContext.Provider value={contextValue}>
