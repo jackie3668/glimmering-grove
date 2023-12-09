@@ -2,6 +2,10 @@
     display: none;
 }
 
+.items-container {
+    padding: 2rem;
+}
+
 .shop h1 {
     padding-top: 4rem;
     padding-bottom: 2rem;
@@ -45,3 +49,79 @@
     font-size: var(--font-size-md);
 }
 
+@media (max-width: 767px) {
+    .shop-banner {
+        padding-top: 3rem;
+        margin-bottom: 3rem;
+        width: 100%;
+        background-color: var(--primary);
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .shop-banner img {
+        height: 6rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .items-container {
+        padding: 3rem;
+    }
+
+    .shop-banner {
+        padding-top: 4rem;
+        margin-bottom: 4rem;
+        background-color: var(--primary);
+        height: 4.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .shop-banner img {
+        height: 7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .items-container {
+        padding: 3rem;
+    }
+
+    .shop-banner {
+        padding-top: 7rem;
+        margin-bottom: 4rem;
+        background-color: var(--primary);
+        height: 7.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .shop-banner img {
+        height: 10rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .items-container {
+        padding: 4rem;
+    }
+
+    .shop-banner {
+        padding-top: 7rem;
+        margin-bottom: 4rem;
+        background-color: var(--primary);
+        height: 8.15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .shop-banner img {
+        height: 12rem;
+    }
+}
