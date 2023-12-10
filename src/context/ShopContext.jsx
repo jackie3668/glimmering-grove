@@ -23,8 +23,7 @@ const ShopContextProvider = ( props ) => {
 
   const addToCart = (itemID, size, cartType, quantity) => {
     console.log('Adding to Cart:', itemID, cartType, quantity);
-  
-    const cartToUpdate = cartType === 'buyNow' ? buyNowItems : addToCartItems;
+
   
     if (cartType === 'buyNow') {
       setBuyNowItems((prev) => ({
@@ -51,8 +50,6 @@ const ShopContextProvider = ( props ) => {
   
   const removeFromCart = (itemID, size, cartType, quantity) => {
     console.log('Removing from Cart:', itemID, size, cartType, quantity);
-  
-    const cartToUpdate = cartType === 'buyNow' ? buyNowItems : addToCartItems;
   
     if (cartType === 'buyNow') {
       setBuyNowItems((prev) => ({
@@ -107,7 +104,7 @@ const ShopContextProvider = ( props ) => {
     return totalItem;
   };
 
-  const contextValue = { products, addToCartItems, buyNowItems, addToCart, setAddToCartItems, removeFromCart, getTotalCartAmount, getTotalCartItems, cartDetails, setCartDetails };
+  const contextValue = { products, addToCartItems, buyNowItems, addToCart, setAddToCartItems, setBuyNowItems, removeFromCart, getTotalCartAmount, getTotalCartItems, cartDetails, setCartDetails };
 
   return (
     <ShopContext.Provider value={contextValue}>

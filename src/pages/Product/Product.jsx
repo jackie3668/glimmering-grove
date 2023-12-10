@@ -133,6 +133,7 @@ const Product = () => {
     
       const handleBuyNow = () => {
         addToCart(product.id, selectedSize, 'buyNow', selectedQuantity);
+        console.log(buyNowItems);
       };
     
   return (
@@ -217,8 +218,8 @@ const Product = () => {
                     </div>
                 </div>
                 <div className="product-details-info-buttons">
-                    <button  className='cart-open' onClick={handleAddToCart}>Add to cart</button>
-                    <button onClick={handleBuyNow}>Buy it now</button>
+                    <button  className='cart-open add-to-cart' onClick={handleAddToCart}>Add to cart</button>
+                    <Link onClick={handleScrollToTop} to='/checkoutnow'><button className='buy-now' onClick={handleBuyNow}>Buy it now</button></Link>
                 </div>
                 <div className="product-details-info-description">
                     <p>

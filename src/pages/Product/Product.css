@@ -187,10 +187,11 @@
 
 .product-details-info-buttons button {
     height: 5rem;
+    width: 50%;
     font-size: var(--font-size-xxl);
 }
 
-.product-details-info-buttons :first-child {
+.product-details-info-buttons .add-to-cart {
     color: var(--text);
     background-color: var(--background);
     border: 2px solid var(--text);
