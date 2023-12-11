@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Footer, Navbar } from './components';
-import { Home, Shop, Product, Cart, About, Contact, CartNow } from './pages';
+import { Home, Shop, Product, Cart, About, Contact, CartNow, Blog } from './pages';
 import arrow from './asset/ui/arrow-down-sign-to-navigate.png';
 import ShopContextProvider from './context/ShopContext';
 import './App.css'
@@ -35,6 +35,7 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkoutnow' element={<CartNow />} />
             <Route path='/about' element={<About />} />
+            <Route path='/blog' element={<Blog />} />
             <Route path='/contact' element={<Contact />} />
           </Routes>
           </ShopContextProvider>

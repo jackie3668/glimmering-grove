@@ -1,0 +1,165 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-banner {
+  background-image: url(../../asset/other/4.jpg);
+  background-size: cover;
+  width: 100%;
+  min-height: 15rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(30%);
+}
+
+.contact-info {
+  padding: 5% 10%;
+  text-align: center;
+  background-color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.contact-details h2 {
+  align-self: center;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0rem 2rem;
+  gap: 1rem;
+}
+
+.contact-map {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  margin: 2rem 0rem;
+  background-color: var(--primary);
+  padding: 2rem 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+#subject, 
+#text {
+  grid-column: span 2;
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form p {
+  padding-bottom: 1rem;
+}
+
+.contact-form-field input,
+.contact-form-field textarea {
+  padding: 0.5rem;
+}
+
+.contact-form-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+#first,
+#last,
+#tel,
+#email {
+  grid-column: span 1;
+}
+
+#subject, 
+#text {
+  grid-column: span 2;
+}
+
+@media (max-width: 767px) {
+
+
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    margin: 2rem 4rem;
+    padding: 3rem;
+  }
+
+  .contact-form-field {
+    gap: 1rem;
+  }
+
+  .contact-banner {
+    height: 25rem;
+  }
+
+  .office-details {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .office-details h2 {
+    margin-bottom: 2rem;
+  }
+
+  .contact-map iframe {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-form-field input,
+  .contact-form-field textarea {
+    padding: 1rem;
+  }
+
+  .contact-form {
+    margin: 4rem 9rem;
+    padding: 4rem;
+  }
+
+  .office-details {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .office-details h2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-map iframe {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-form {
+    margin: 5rem 18rem;
+  }
+
+  .office-details {
+    gap: 5rem;
+  }
+}

@@ -3,6 +3,10 @@
   font-weight: 500;
 }
 
+.collections a {
+  text-decoration: none;
+}
+
 .collections-display {
   display: grid;
   grid-template-columns: 1fr 1fr;
