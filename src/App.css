@@ -80,7 +80,6 @@ button:active {
 }
 
 @media (min-width: 768px) {
-  /* md, xxxl */
   :root {
     --font-size-xxxs: 0.4rem;
     --font-size-xxs: 0.75rem;
