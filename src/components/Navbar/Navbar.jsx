@@ -24,7 +24,7 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false)
   const [hidden, setHidden] = useState(true)
   const [shopbyHidden, setShopbyHidden] = useState(true)
-  const { cartDetails, setCartDetails, products, addToCartItems, buyNowItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
+  const { cartDetails, setCartDetails, products, addToCartItems, getTotalCartAmount, getTotalCartItems } = useContext(ShopContext);
 
   
   const handleScrollToTop = (e) => {
