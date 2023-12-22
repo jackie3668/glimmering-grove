@@ -176,6 +176,7 @@
 
 .product-details-info-quant-icon {
     font-size: var(--font-size-xxxl);
+    cursor: pointer;
 }
 
 .product-details-info-buttons {
