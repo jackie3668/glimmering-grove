@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/glimmering-grove/static/css/main.3db6cb61.css",
+    "main.css": "/glimmering-grove/static/css/main.460fc9c4.css",
     "main.js": "/glimmering-grove/static/js/main.0a1de71d.js",
     "static/media/8.jpg": "/glimmering-grove/static/media/8.395e1b1c45d1ee3179a2.jpg",
     "static/media/9.jpg": "/glimmering-grove/static/media/9.04a4da6594c4af8b8ed7.jpg",
@@ -196,11 +196,11 @@
     "static/media/new-moon.png": "/glimmering-grove/static/media/new-moon.1d2f623bf2b0d3470eb9.png",
     "static/media/trash.png": "/glimmering-grove/static/media/trash.c4e35861d2606e76ed78.png",
     "index.html": "/glimmering-grove/index.html",
-    "main.3db6cb61.css.map": "/glimmering-grove/static/css/main.3db6cb61.css.map",
+    "main.460fc9c4.css.map": "/glimmering-grove/static/css/main.460fc9c4.css.map",
     "main.0a1de71d.js.map": "/glimmering-grove/static/js/main.0a1de71d.js.map"
   },
   "entrypoints": [
-    "static/css/main.3db6cb61.css",
+    "static/css/main.460fc9c4.css",
     "static/js/main.0a1de71d.js"
   ]
 }
