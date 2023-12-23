@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Shop.css'
 import products from '../../data/products'
 import { Item } from '../../components'

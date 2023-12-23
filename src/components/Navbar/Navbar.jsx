@@ -76,23 +76,35 @@ const Navbar = () => {
   document.body.addEventListener('click', handleBodyClick)
 
   const handleDropdownClick = (e) => {
+    console.log('Dropdown Clicked');
     if (e.target.nodeName === 'UL') {
-      return
+      console.log('Clicked on UL element');
+      return;
     } else if (e.target.closest('li.navbar-desktop-menu-dropdown-menu') && e.target.nodeName === 'IMG') {
-    const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
-    targetDiv.classList.toggle('active');
+      console.log('Clicked on dropdown menu image');
+      const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
+      console.log('TargetDiv:', targetDiv);
+      targetDiv.classList.toggle('active');
     } else if (e.target.closest('li.navbar-desktop-menu-dropdown-menu')) {
+      console.log('Clicked on dropdown menu item');
       const targetLi = e.target.closest('li.navbar-desktop-menu-dropdown-menu');
+      console.log('TargetLi:', targetLi);
       const targetDiv = targetLi.querySelector('.navbar-desktop-menu-dropdown-items');
+      console.log('TargetDiv:', targetDiv);
       targetDiv.classList.toggle('active');
     } else if (e.target.closest('li.navbar-desktop-menu-dropdown-item') && e.target.nodeName === 'LI') {
+      console.log('Clicked on dropdown sub-item');
       const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
+      console.log('TargetDiv:', targetDiv);
       targetDiv.classList.remove('active');
     } else {
+      console.log('Clicked elsewhere');
       const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
+      console.log('TargetDiv:', targetDiv);
       targetDiv.classList.remove('active');
     }
   };
+  
   
   document.body.addEventListener('click', handleDropdownClick);
 
