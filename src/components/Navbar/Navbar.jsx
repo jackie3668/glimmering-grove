@@ -76,34 +76,33 @@ const Navbar = () => {
   document.body.addEventListener('click', handleBodyClick)
 
   const handleDropdownClick = (e) => {
-    console.log('Dropdown Clicked');
     if (e.target.nodeName === 'UL') {
-      console.log('Clicked on UL element');
       return;
     } else if (e.target.closest('li.navbar-desktop-menu-dropdown-menu') && e.target.nodeName === 'IMG') {
-      console.log('Clicked on dropdown menu image');
       const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
-      console.log('TargetDiv:', targetDiv);
-      targetDiv.classList.toggle('active');
-    } else if (e.target.closest('li.navbar-desktop-menu-dropdown-menu')) {
-      console.log('Clicked on dropdown menu item');
+      if (targetDiv.classList.contains('active')) {
+        targetDiv.classList.remove('active');
+      } else {
+        targetDiv.classList.add('active');
+      }
+    } else if (e.target.classList.contains('navbar-desktop-menu-dropdown-menu')){
       const targetLi = e.target.closest('li.navbar-desktop-menu-dropdown-menu');
-      console.log('TargetLi:', targetLi);
       const targetDiv = targetLi.querySelector('.navbar-desktop-menu-dropdown-items');
-      console.log('TargetDiv:', targetDiv);
-      targetDiv.classList.toggle('active');
-    } else if (e.target.closest('li.navbar-desktop-menu-dropdown-item') && e.target.nodeName === 'LI') {
-      console.log('Clicked on dropdown sub-item');
+      if (targetDiv.classList.contains('active')) {
+        targetDiv.classList.remove('active');
+      } else {
+        targetDiv.classList.add('active');
+      }
+    } else if (e.target.nodeName === 'A') {
       const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
-      console.log('TargetDiv:', targetDiv);
       targetDiv.classList.remove('active');
     } else {
-      console.log('Clicked elsewhere');
       const targetDiv = document.querySelector('.navbar-desktop-menu-dropdown-items');
-      console.log('TargetDiv:', targetDiv);
       targetDiv.classList.remove('active');
     }
   };
+  
+  
   
   
   document.body.addEventListener('click', handleDropdownClick);

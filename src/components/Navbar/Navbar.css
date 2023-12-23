@@ -237,7 +237,7 @@ a {
   z-index: 999;
 }
 
-.navbar-desktop-menu-dropdown-items.active {
+.navbar-desktop-menu-dropdown-items.active{
   display: block; 
   background-color: var(--primary);
 }
