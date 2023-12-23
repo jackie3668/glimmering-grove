@@ -115,12 +115,12 @@ const Navbar = () => {
         setShowNav(false);
         setCartDetails(false);
       }, 2000);
-
+  
       return () => {
         clearTimeout(timeoutId);
       };
     }
-  }, [cartDetails]);
+  }, [cartDetails, setCartDetails]);
   
 
   const handleCartClick = (e) => {
