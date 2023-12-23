@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/glimmering-grove/static/css/main.7999a40a.css",
-    "main.js": "/glimmering-grove/static/js/main.9c03efb9.js",
+    "main.css": "/glimmering-grove/static/css/main.bc2e2192.css",
+    "main.js": "/glimmering-grove/static/js/main.360f765f.js",
     "static/media/8.jpg": "/glimmering-grove/static/media/8.395e1b1c45d1ee3179a2.jpg",
     "static/media/9.jpg": "/glimmering-grove/static/media/9.04a4da6594c4af8b8ed7.jpg",
     "static/media/Sticky.jpg": "/glimmering-grove/static/media/Sticky.6416f11331165b6e9dc9.jpg",
@@ -196,11 +196,11 @@
     "static/media/new-moon.png": "/glimmering-grove/static/media/new-moon.1d2f623bf2b0d3470eb9.png",
     "static/media/trash.png": "/glimmering-grove/static/media/trash.c4e35861d2606e76ed78.png",
     "index.html": "/glimmering-grove/index.html",
-    "main.7999a40a.css.map": "/glimmering-grove/static/css/main.7999a40a.css.map",
-    "main.9c03efb9.js.map": "/glimmering-grove/static/js/main.9c03efb9.js.map"
+    "main.bc2e2192.css.map": "/glimmering-grove/static/css/main.bc2e2192.css.map",
+    "main.360f765f.js.map": "/glimmering-grove/static/js/main.360f765f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7999a40a.css",
-    "static/js/main.9c03efb9.js"
+    "static/css/main.bc2e2192.css",
+    "static/js/main.360f765f.js"
   ]
 }
