@@ -20,7 +20,7 @@ function App() {
         <div className='scroll-to-top' onClick={handleScrollToTop}>
           <img src={arrow} alt='' />
         </div>
-        <BrowserRouter basename="/glimmering-grove/">
+        <BrowserRouter basename="/glimmering-grove">
           <ShopContextProvider>
           <Navbar />
           <Routes>

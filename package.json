@@ -1,7 +1,7 @@
 {
   "name": "glimmering-grove",
   "version": "0.1.0",
-  "homepage": "https://jackie3668.github.io/glimmering-grove",
+  "homepage": "https://jackie3668.github.io/glimmering-grove/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
